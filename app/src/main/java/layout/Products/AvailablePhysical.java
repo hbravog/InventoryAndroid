@@ -90,7 +90,7 @@ public class AvailablePhysical extends AppCompatActivity {
                 }
                 else if(s.equals("2"))
                 {
-                    Toast.makeText(getApplicationContext(), "Se agrego stock a nuevo item : " + codProducto.getText(), Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "La combinación de ubicación - bodega no existe.", Toast.LENGTH_LONG).show();
                     CleanControl();
                 }
             }

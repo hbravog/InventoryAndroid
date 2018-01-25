@@ -25,7 +25,7 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="number"
+        android:inputType="number|numberSigned"
         android:text="Cantidad"
         android:ems="10"
         android:layout_below="@+id/txtProducto"
