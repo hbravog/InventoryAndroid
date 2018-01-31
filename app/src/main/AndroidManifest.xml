@@ -56,8 +56,11 @@
             android:name="layout.Products.SingleItemView"
             android:label="@string/title_activity_singleitemview"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name="layout.Products.AvailablePhysical"
+        <activity
+            android:name="layout.InventoryAndWarhouse.AvailablePhysical.AvailablePhysical"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name="layout.InventoryAndWarhouse.Location.Location" />
+        <activity android:name="layout.InventoryAndWarhouse.AvailablePhysical.AvailablePhysicalMain"></activity>
     </application>
 
 </manifest>

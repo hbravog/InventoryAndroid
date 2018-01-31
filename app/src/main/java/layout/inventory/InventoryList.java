@@ -24,23 +24,7 @@ public class InventoryList extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_inventory_list);
-      //  gridView = (GridView) findViewById(R.id.grdEmp);
 
-        Intent intent = getIntent();
-        String jsonArray = intent.getStringExtra("jsonArrayInventory");
-        try {
-            JSONArray array = new JSONArray(jsonArray);
-            for (int i=0; i<array.length(); i++) {
-
-
-                list.add(array.getString(i));
-            }
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-            dal.AddInventory(list);
-      //  LoadGridInventory(list);
     }
 
 

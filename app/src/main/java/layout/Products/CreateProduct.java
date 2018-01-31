@@ -24,8 +24,9 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
-import Util.QrCodeHelper;
-import Util.Singleton;
+
+import Generics.Globals;
+import Generics.QrCodeHelper;
 import dal.QrImagePathFile;
 import dto.CategoriaDTO;
 import dto.ProveedorDTO;
@@ -47,7 +48,7 @@ public class CreateProduct extends AppCompatActivity   {
     ArrayList<CategoriaDTO> lista = new ArrayList<>();
     ArrayList<ProveedorDTO> listProv = new ArrayList<>();
 
-    Singleton singleton = new Singleton();
+    Globals globals = new Globals();
 
     QrCodeHelper qrCodeHelper = new QrCodeHelper();
     QrImagePathFile pathFile = new QrImagePathFile();
@@ -74,7 +75,7 @@ public class CreateProduct extends AppCompatActivity   {
     {
         DateFormat df = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss");
         String date = df.format(Calendar.getInstance().getTime());
-        Singleton g = Singleton.getInstance();
+        Globals g = Globals.getInstance();
 
         if(TextUtils.isEmpty(descripcion.getText().toString()))
         {
@@ -90,7 +91,7 @@ public class CreateProduct extends AppCompatActivity   {
             int id_cat = dto1.getId();
 
 
-            String url = singleton.getIp() + "InventoryRest/rs/service/AddProduct?p1=" + codProducto.getText().toString().trim() + "&p2=" + descripcion.getText().toString()+ "&p3=" + id_prov + "&p4=" + g.getUser() +  "&p5=" + "qrcode" + "&p6=" + precio.getText()+ "&p7=" + id_cat;
+            String url = globals.getIp() + "InventoryRest/rs/service/AddProduct?p1=" + codProducto.getText().toString().trim() + "&p2=" + descripcion.getText().toString()+ "&p3=" + id_prov + "&p4=" + g.getUser() +  "&p5=" + "qrcode" + "&p6=" + precio.getText()+ "&p7=" + id_cat;
             StringRequest request = new StringRequest(Request.Method.GET, url, new Response.Listener<String>(){
                 @Override
                 public void onResponse(String s) {
@@ -161,7 +162,7 @@ public class CreateProduct extends AppCompatActivity   {
     public void GetAllCategory()
     {
 
-        String url = singleton.getIp() + "InventoryRest/rs/service/getAllCategory";
+        String url = globals.getIp() + "InventoryRest/rs/service/getAllCategory";
         listCategory = new  ArrayList<>();
         JsonArrayRequest jreq = new JsonArrayRequest(url,
                 new Response.Listener<JSONArray>() {
@@ -199,7 +200,7 @@ public class CreateProduct extends AppCompatActivity   {
 
     public void GetAllProviders()
     {
-        String url = singleton.getIp() + "InventoryRest/rs/service/getAllProvider";
+        String url = globals.getIp() + "InventoryRest/rs/service/getAllProvider";
         listCategory = new  ArrayList<>();
         JsonArrayRequest jreq = new JsonArrayRequest(url,
                 new Response.Listener<JSONArray>() {

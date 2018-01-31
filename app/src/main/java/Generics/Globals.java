@@ -1,23 +1,23 @@
-package Util;
+package Generics;
 
 import android.app.Application;
 
 /**
  * Created by Hernan on 29-05-16.
  */
-public class Singleton extends Application {
+public class Globals extends Application {
 
-    private static Singleton instance;
+    private static Globals instance;
 
     // Global variable
     private int data;
     private String user;
     private String apellidos;
-    private String ip_server = "http://192.168.8.101:8080/";
+    private String ip_server = "http://192.168.8.103:8080/";
     private  String result;
 
     // Restrict the constructor from being instantiated
-    public Singleton()
+    public Globals()
     {
 
     }
@@ -29,9 +29,9 @@ public class Singleton extends Application {
         return this.data;
     }
 
-    public static synchronized Singleton getInstance(){
+    public static synchronized Globals getInstance(){
         if(instance==null){
-            instance=new Singleton();
+            instance=new Globals();
         }
         return instance;
     }

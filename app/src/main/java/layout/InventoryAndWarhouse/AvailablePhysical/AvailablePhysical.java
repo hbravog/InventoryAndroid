@@ -1,4 +1,4 @@
-package layout.Products;
+package layout.InventoryAndWarhouse.AvailablePhysical;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -16,17 +16,18 @@ import com.thesis.inventory.inventoryandroid.R;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import Util.Singleton;
+
+import Generics.Globals;
 import services.AppController;
 
 public class AvailablePhysical extends AppCompatActivity {
-    Singleton singleton = new Singleton();
+    Globals globals = new Globals();
     private EditText codProducto,descripcion,cantidad,bodega,ubicacion;
     private Button guardar,buscar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.product_available_physical);
+        setContentView(R.layout.inventory_available_physical_add);
 
         codProducto = (EditText) findViewById(R.id.txtcodProducto);
         descripcion = (EditText) findViewById(R.id.txtProducto);
@@ -47,7 +48,7 @@ public class AvailablePhysical extends AppCompatActivity {
 
     public void FindItemByCode()
     {
-        String url = singleton.getIp() + "InventoryRest/rs/service/getProductByCode?p1=" + codProducto.getText().toString().trim();
+        String url = globals.getIp() + "InventoryRest/rs/service/getProductByCode?p1=" + codProducto.getText().toString().trim();
         JsonArrayRequest jreq = new JsonArrayRequest(url,
                 new Response.Listener<JSONArray>() {
                     @Override
@@ -80,7 +81,7 @@ public class AvailablePhysical extends AppCompatActivity {
 
     public void AddAvailablePhysical()
     {
-        String url = singleton.getIp() + "InventoryRest/rs/service/AdjustItemQty?p1=" + codProducto.getText().toString().trim() + "&p2=" + cantidad.getText().toString().trim() + "&p3=" + bodega.getText().toString().trim() + "&p4=" + ubicacion.getText().toString().trim();
+        String url = globals.getIp() + "InventoryRest/rs/service/AdjustItemQty?p1=" + codProducto.getText().toString().trim() + "&p2=" + cantidad.getText().toString().trim() + "&p3=" + bodega.getText().toString().trim() + "&p4=" + ubicacion.getText().toString().trim();
         StringRequest request = new StringRequest(Request.Method.GET, url, new Response.Listener<String>(){
             @Override
             public void onResponse(String s) {

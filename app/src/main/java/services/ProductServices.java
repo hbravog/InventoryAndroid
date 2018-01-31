@@ -7,7 +7,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import Util.Singleton;
+import Generics.Globals;
 
 /**
  * Created by Hernan on 12-10-16.
@@ -16,11 +16,11 @@ public class ProductServices
 {
 
     String resp = "";
-    Singleton singleton = new Singleton();
+    Globals globals = new Globals();
     public String GetAllProductList()
     {
 
-        String url = singleton.getIp() + "InventoryRest/rs/service/getAllProduct";
+        String url = globals.getIp() + "InventoryRest/rs/service/getAllProduct";
         JsonArrayRequest jreq = new JsonArrayRequest(url,
                 new Response.Listener<JSONArray>() {
                     @Override
@@ -35,7 +35,7 @@ public class ProductServices
                             }
 
 
-                            Singleton g = Singleton.getInstance();
+                            Globals g = Globals.getInstance();
                             g.setUser("Hernan");
 
 

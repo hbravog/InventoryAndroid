@@ -17,9 +17,8 @@ import com.android.volley.toolbox.JsonArrayRequest;
 
 import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
 
-import Util.Singleton;
+import Generics.Globals;
 import services.AppController;
 import services.User;
 
@@ -30,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
     private EditText txtRut;
     private EditText txtPass;
-    Singleton singleton = new Singleton();
+    Globals globals = new Globals();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,8 +69,8 @@ public class MainActivity extends AppCompatActivity {
         //final ProgressDialog pDialog = new ProgressDialog(this);
         //pDialog.setMessage("Cargando...");
         //pDialog.show();
-        String url = singleton.getIp() + "InventoryRest/rs/service/getValidaUsuario?p1="+txtRut.getText().toString().trim()+"&p2="+txtPass.getText().toString().trim()+"";
-       //String url = singleton.getIp() + "InventoryRest/rs/service/getAllProduct";
+        String url = globals.getIp() + "InventoryRest/rs/service/getValidaUsuario?p1="+txtRut.getText().toString().trim()+"&p2="+txtPass.getText().toString().trim()+"";
+       //String url = globals.getIp() + "InventoryRest/rs/service/getAllProduct";
 
         JsonArrayRequest jreq = new JsonArrayRequest(url,
                 new Response.Listener<JSONArray>() {
@@ -79,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
                 public void onResponse(JSONArray response) {
                     if(response.length() > 0)
                     {
-                        Singleton g = Singleton.getInstance();
+                        Globals g = Globals.getInstance();
                         g.setUser("Hernan");
 
                         try {

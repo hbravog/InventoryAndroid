@@ -16,13 +16,13 @@ import org.json.JSONException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
-import Util.Singleton;
+import Generics.Globals;
 import dto.ProductoDTO;
 import services.AppController;
 
 public class ListProduct extends AppCompatActivity {
 
-    Singleton singleton = new Singleton();
+    Globals globals = new Globals();
     List<ProductoDTO> listProduct;
     // Declare Variables
     ListView list;
@@ -71,7 +71,7 @@ public class ListProduct extends AppCompatActivity {
 
     public void GetAllProductList()
     {
-        String url = singleton.getIp() + "InventoryRest/rs/service/getAllProduct";
+        String url = globals.getIp() + "InventoryRest/rs/service/getAllProduct";
         listProduct = new  ArrayList<>();
         JsonArrayRequest jreq = new JsonArrayRequest(url,
                 new Response.Listener<JSONArray>() {

@@ -5,29 +5,26 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 
 import org.json.JSONArray;
-import org.json.JSONObject;
 
-import Util.Singleton;
+import Generics.Globals;
 import layout.inventory.InventoryList;
 import services.AppController;
-import services.Inventory;
 import layout.Products.MainProduct;
-import services.User;
 
 public class MenuActivity extends AppCompatActivity {
 
 
-    private Button btnInventario, btnProducto;
-    Singleton singleton = new Singleton();
+    private Button btnInventario, btnProducto,btnInventoryWarehouse;
+    Globals globals = new Globals();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,10 +32,10 @@ public class MenuActivity extends AppCompatActivity {
         setContentView(R.layout.activity_menu);
         AddListeneronButton();
     }
-
+/*
     public void ValidateInventory()
     {
-        String url = singleton.getIp() + "InventoryRest/rs/service2/getInventoryActive";
+        String url = globals.getIp() + "InventoryRest/rs/service2/getInventoryActive";
 
         JsonArrayRequest jreq = new JsonArrayRequest(url,
                 new Response.Listener<JSONArray>() {
@@ -47,7 +44,7 @@ public class MenuActivity extends AppCompatActivity {
 
                         if(response.length() > 0)
                         {
-                            Singleton g = Singleton.getInstance();
+                            Globals g = Globals.getInstance();
                             g.setUser("Hernan");
 
                             Intent myIntent = new Intent(MenuActivity.this, InventoryList.class);
@@ -58,7 +55,7 @@ public class MenuActivity extends AppCompatActivity {
                         {
                             AlertDialog.Builder builder = new AlertDialog.Builder(MenuActivity.this);
                             builder.setMessage("No hay inventario activo").setTitle("Error inventario");
-                            AlertDialog dialog = builder.create();
+                            AlertDialog dialog = bu15585ilder.create();
                             dialog.setButton(AlertDialog.BUTTON_POSITIVE, "Aceptar", new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int id) {
                                     //...
@@ -73,16 +70,14 @@ public class MenuActivity extends AppCompatActivity {
         });
         AppController.getInstance().addToRequestQueue(jreq, "jreq");
     }
-
+*/
     public void AddListeneronButton()
     {
         btnInventario = (Button) findViewById(R.id.btnInventario);
         btnInventario.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View arg0) {
-
-                ValidateInventory();
+                // ValidateInventory();
             }
         });
 
@@ -95,5 +90,15 @@ public class MenuActivity extends AppCompatActivity {
                 MenuActivity.this.startActivity(myIntent);
             }
         });
+
+        btnInventoryWarehouse = (Button)findViewById(R.id.btnInvAlm);
+        btnInventoryWarehouse.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View arg0)
+            {
+               // Intent intMainWareHouse = new Intent(MenuActivity.this,);
+            }
+        });
+
     }
 }

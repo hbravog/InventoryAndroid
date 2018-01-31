@@ -5,8 +5,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.EditText;
 import com.thesis.inventory.inventoryandroid.R;
-import dal.ProductoDAL;
-import dto.ProductoDTO;
 
 public class UpdateProduct extends AppCompatActivity {
 
@@ -16,7 +14,7 @@ public class UpdateProduct extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_update_product);
+        setContentView(R.layout.product_update_product);
 
         String cod_prod = "";
         Intent intent = getIntent();

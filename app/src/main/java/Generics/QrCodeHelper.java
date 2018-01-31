@@ -1,4 +1,4 @@
-package Util;
+package Generics;
 
 import android.graphics.Bitmap;
 import android.os.Environment;

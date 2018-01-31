@@ -8,6 +8,8 @@ import android.widget.Button;
 
 import com.thesis.inventory.inventoryandroid.R;
 
+import layout.InventoryAndWarhouse.AvailablePhysical.AvailablePhysical;
+
 public class MainProduct extends AppCompatActivity {
 
     private Button btnNuevoProducto;
