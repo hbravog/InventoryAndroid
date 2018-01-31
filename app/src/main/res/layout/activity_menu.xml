@@ -42,7 +42,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Bodegas"
-        android:id="@+id/btnBodegas"
+        android:id="@+id/btnAlmacen"
         android:layout_below="@+id/btnProductos"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="36dp" />
@@ -53,7 +53,7 @@
         android:text="Inventario y Almacenes"
         android:id="@+id/btnInvAlm"
         android:layout_marginTop="16dp"
-        android:layout_below="@+id/btnBodegas"
+        android:layout_below="@+id/btnAlmacen"
         android:layout_centerHorizontal="true" />
 
 

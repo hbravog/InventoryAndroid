@@ -16,6 +16,8 @@ import com.android.volley.toolbox.JsonArrayRequest;
 import org.json.JSONArray;
 
 import Generics.Globals;
+import layout.InventoryAndWarhouse.AvailablePhysical.AvailablePhysicalMain;
+import layout.InventoryAndWarhouse.InventoryMain;
 import layout.inventory.InventoryList;
 import services.AppController;
 import layout.Products.MainProduct;
@@ -96,9 +98,9 @@ public class MenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View arg0)
             {
-               // Intent intMainWareHouse = new Intent(MenuActivity.this,);
+               Intent intMainWareHouse = new Intent(MenuActivity.this, InventoryMain.class);
+                MenuActivity.this.startActivity(intMainWareHouse);
             }
         });
-
     }
 }

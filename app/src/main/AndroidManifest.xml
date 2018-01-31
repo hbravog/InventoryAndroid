@@ -60,7 +60,8 @@
             android:name="layout.InventoryAndWarhouse.AvailablePhysical.AvailablePhysical"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name="layout.InventoryAndWarhouse.Location.Location" />
-        <activity android:name="layout.InventoryAndWarhouse.AvailablePhysical.AvailablePhysicalMain"></activity>
+        <activity android:name="layout.InventoryAndWarhouse.AvailablePhysical.AvailablePhysicalMain" />
+        <activity android:name="layout.InventoryAndWarhouse.InventoryMain"></activity>
     </application>
 
 </manifest>
