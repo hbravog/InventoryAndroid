@@ -20,7 +20,7 @@ import org.json.JSONObject;
 import Generics.Globals;
 import services.AppController;
 
-public class AvailablePhysical extends AppCompatActivity {
+public class AvailablePhysicalAdd extends AppCompatActivity {
     Globals globals = new Globals();
     private EditText codProducto,descripcion,cantidad,bodega,ubicacion;
     private Button guardar,buscar;

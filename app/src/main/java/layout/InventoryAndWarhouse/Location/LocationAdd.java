@@ -9,9 +9,9 @@ import java.util.List;
 
 import Generics.Globals;
 
-public class Location extends AppCompatActivity
+public class LocationAdd extends AppCompatActivity
 {
-    List<Location> listLocation ;
+    List<LocationAdd> listLocationAdd;
     Globals globals = new Globals();
 
     @Override
@@ -20,11 +20,5 @@ public class Location extends AppCompatActivity
         setContentView(R.layout.inventory_location_add);
     }
 
-    public void GetAllLocation()
-    {
-        listLocation = new ArrayList<>();
-        String url = globals.getIp() + "InventoryRest/rs/service/getAllLocation";
-
-    }
 
 }

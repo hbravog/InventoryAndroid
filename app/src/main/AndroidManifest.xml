@@ -57,11 +57,14 @@
             android:label="@string/title_activity_singleitemview"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="layout.InventoryAndWarhouse.AvailablePhysical.AvailablePhysical"
+            android:name="layout.InventoryAndWarhouse.AvailablePhysical.AvailablePhysicalAdd"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name="layout.InventoryAndWarhouse.Location.Location" />
-        <activity android:name="layout.InventoryAndWarhouse.AvailablePhysical.AvailablePhysicalMain" />
-        <activity android:name="layout.InventoryAndWarhouse.InventoryMain"></activity>
+        <activity android:name="layout.InventoryAndWarhouse.Location.LocationAdd" />
+        <activity android:name="layout.InventoryAndWarhouse.AvailablePhysical.AvailablePhysicalView" />
+        <activity android:name="layout.InventoryAndWarhouse.InventoryMain" />
+        <activity android:name="layout.InventoryAndWarhouse.Location.LocationView" />
+        <activity android:name="layout.InventoryAndWarhouse.Warehouse.WareHouseView" />
+        <activity android:name="layout.InventoryAndWarhouse.Warehouse.WareHouseAdd"></activity>
     </application>
 
 </manifest>

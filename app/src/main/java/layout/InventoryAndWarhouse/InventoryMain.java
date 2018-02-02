@@ -6,18 +6,17 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.thesis.inventory.inventoryandroid.MenuActivity;
 import com.thesis.inventory.inventoryandroid.R;
 
-import layout.InventoryAndWarhouse.AvailablePhysical.AvailablePhysicalMain;
-import layout.Products.MainProduct;
+import layout.InventoryAndWarhouse.AvailablePhysical.AvailablePhysicalView;
 
 public class InventoryMain extends AppCompatActivity {
 
-    private Button available;
+    private Button available, location, warehouse;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.inventory_main);
         AddListeneronButton();
@@ -25,13 +24,46 @@ public class InventoryMain extends AppCompatActivity {
 
     public void AddListeneronButton()
     {
-
         available = (Button)findViewById(R.id.btnDisponible);
-        available.setOnClickListener(new View.OnClickListener() {
+        available.setOnClickListener(new View.OnClickListener()
+        {
             @Override
             public void onClick(View arg0)
             {
-                Intent intMainWareHouse = new Intent(InventoryMain.this, AvailablePhysicalMain.class);
+                Intent intMainWareHouse = new Intent(InventoryMain.this, AvailablePhysicalView.class);
+                InventoryMain.this.startActivity(intMainWareHouse);
+            }
+        });
+
+        available = (Button)findViewById(R.id.btnDisponible);
+        available.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View arg0)
+            {
+                Intent intMainWareHouse = new Intent(InventoryMain.this, AvailablePhysicalView.class);
+                InventoryMain.this.startActivity(intMainWareHouse);
+            }
+        });
+
+        location = (Button)findViewById(R.id.btnUbicaciones);
+        location.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View arg0)
+            {
+                Intent intMainWareHouse = new Intent(InventoryMain.this, AvailablePhysicalView.class);
+                InventoryMain.this.startActivity(intMainWareHouse);
+            }
+        });
+
+        warehouse = (Button)findViewById(R.id.btnAlmacen);
+        warehouse.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View arg0)
+            {
+                Intent intMainWareHouse = new Intent(InventoryMain.this, AvailablePhysicalView.class);
                 InventoryMain.this.startActivity(intMainWareHouse);
             }
         });

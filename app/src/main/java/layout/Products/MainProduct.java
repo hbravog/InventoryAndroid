@@ -8,7 +8,7 @@ import android.widget.Button;
 
 import com.thesis.inventory.inventoryandroid.R;
 
-import layout.InventoryAndWarhouse.AvailablePhysical.AvailablePhysical;
+import layout.InventoryAndWarhouse.AvailablePhysical.AvailablePhysicalAdd;
 
 public class MainProduct extends AppCompatActivity {
 
@@ -51,7 +51,7 @@ public class MainProduct extends AppCompatActivity {
         btnDisponible.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View arg0) {
-                Intent myIntent3 = new Intent(MainProduct.this,AvailablePhysical.class);
+                Intent myIntent3 = new Intent(MainProduct.this,AvailablePhysicalAdd.class);
                 MainProduct.this.startActivity(myIntent3);
             }
         });
