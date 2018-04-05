@@ -9,6 +9,8 @@ import android.widget.Button;
 import com.thesis.inventory.inventoryandroid.R;
 
 import layout.InventoryAndWarhouse.AvailablePhysical.AvailablePhysicalView;
+import layout.InventoryAndWarhouse.Location.LocationView;
+import layout.InventoryAndWarhouse.Warehouse.WareHouseView;
 
 public class InventoryMain extends AppCompatActivity {
 
@@ -52,7 +54,7 @@ public class InventoryMain extends AppCompatActivity {
             @Override
             public void onClick(View arg0)
             {
-                Intent intMainWareHouse = new Intent(InventoryMain.this, AvailablePhysicalView.class);
+                Intent intMainWareHouse = new Intent(InventoryMain.this, LocationView.class);
                 InventoryMain.this.startActivity(intMainWareHouse);
             }
         });
@@ -63,7 +65,7 @@ public class InventoryMain extends AppCompatActivity {
             @Override
             public void onClick(View arg0)
             {
-                Intent intMainWareHouse = new Intent(InventoryMain.this, AvailablePhysicalView.class);
+                Intent intMainWareHouse = new Intent(InventoryMain.this, WareHouseView.class);
                 InventoryMain.this.startActivity(intMainWareHouse);
             }
         });

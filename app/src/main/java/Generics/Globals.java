@@ -13,7 +13,7 @@ public class Globals extends Application {
     private int data;
     private String user;
     private String apellidos;
-    private String ip_server = "http://192.168.8.104:8080/";
+    private String ip_server = "http://192.168.8.101:8080/";
     private  String result;
 
     // Restrict the constructor from being instantiated
