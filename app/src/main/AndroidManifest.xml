@@ -16,8 +16,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -60,11 +59,13 @@
             android:name="layout.InventoryAndWarhouse.AvailablePhysical.AvailablePhysicalAdd"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name="layout.InventoryAndWarhouse.Location.LocationAdd" />
-        <activity android:name="layout.InventoryAndWarhouse.AvailablePhysical.AvailablePhysicalView" />
+        <activity
+            android:name="layout.InventoryAndWarhouse.AvailablePhysical.AvailablePhysicalView"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name="layout.InventoryAndWarhouse.InventoryMain" />
         <activity android:name="layout.InventoryAndWarhouse.Location.LocationView" />
         <activity android:name="layout.InventoryAndWarhouse.Warehouse.WareHouseView" />
-        <activity android:name="layout.InventoryAndWarhouse.Warehouse.WareHouseAdd"></activity>
+        <activity android:name="layout.InventoryAndWarhouse.Warehouse.WareHouseAdd" />
     </application>
 
 </manifest>

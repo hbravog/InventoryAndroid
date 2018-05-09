@@ -12,7 +12,8 @@ import layout.InventoryAndWarhouse.AvailablePhysical.AvailablePhysicalView;
 import layout.InventoryAndWarhouse.Location.LocationView;
 import layout.InventoryAndWarhouse.Warehouse.WareHouseView;
 
-public class InventoryMain extends AppCompatActivity {
+public class InventoryMain extends AppCompatActivity
+{
 
     private Button available, location, warehouse;
 
@@ -26,17 +27,6 @@ public class InventoryMain extends AppCompatActivity {
 
     public void AddListeneronButton()
     {
-        available = (Button)findViewById(R.id.btnDisponible);
-        available.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View arg0)
-            {
-                Intent intMainWareHouse = new Intent(InventoryMain.this, AvailablePhysicalView.class);
-                InventoryMain.this.startActivity(intMainWareHouse);
-            }
-        });
-
         available = (Button)findViewById(R.id.btnDisponible);
         available.setOnClickListener(new View.OnClickListener()
         {

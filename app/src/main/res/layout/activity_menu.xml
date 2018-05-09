@@ -21,16 +21,6 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Inventarios"
-        android:id="@+id/btnInventario"
-        android:layout_marginTop="35dp"
-        android:layout_below="@+id/btnUbicaciones"
-        android:layout_alignLeft="@+id/btnUbicaciones"
-        android:layout_alignStart="@+id/btnUbicaciones" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:text="Ubicaciones"
         android:layout_marginTop="35dp"
         android:id="@+id/btnUbicaciones"
@@ -41,20 +31,14 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Bodegas"
-        android:id="@+id/btnAlmacen"
-        android:layout_below="@+id/btnProductos"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="36dp" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:text="Inventario y Almacenes"
         android:id="@+id/btnInvAlm"
-        android:layout_marginTop="16dp"
-        android:layout_below="@+id/btnAlmacen"
-        android:layout_centerHorizontal="true" />
+        android:layout_marginTop="42dp"
+        android:layout_below="@+id/btnUbicaciones"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="62dp"
+        android:layout_marginStart="62dp" />
 
 
 </RelativeLayout>

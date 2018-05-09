@@ -22,7 +22,6 @@ public class WareHouseView extends AppCompatActivity {
     private RecyclerView reyclerViewWareHouse;
     private RecyclerView.Adapter mAdapter;
     Globals globals = new Globals();
-    List<AlmacenDTO> listProduct;
     List<AlmacenDTO> listWareHouse = new ArrayList<>();
 
     @Override
@@ -40,7 +39,6 @@ public class WareHouseView extends AppCompatActivity {
     public List<AlmacenDTO> GetAllWareHouse()
     {
         String url = globals.getIp() + "InventoryRest/rs/service/getAllWarehouse";
-        listProduct = new  ArrayList<>();
         JsonArrayRequest jreq = new JsonArrayRequest(url,
                 new Response.Listener<JSONArray>() {
                     @Override
