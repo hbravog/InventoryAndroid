@@ -1,4 +1,5 @@
 package layout.InventoryAndWarhouse.Location;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -18,7 +19,6 @@ import Generics.Globals;
 import adapter.LocationAdapter;
 import dto.LocationDTO;
 import services.AppController;
-
 
 public class LocationView  extends AppCompatActivity
 {
@@ -56,10 +56,12 @@ public class LocationView  extends AppCompatActivity
     @Override
     public boolean onOptionsItemSelected(MenuItem item)
     {
-        int id = item.getItemId();
-        if(id == R.id.action_new)
+        switch (item.getItemId())
         {
-            return true;
+            case R.id.action_new:
+                Intent intent = new Intent(this,LocationAdd.class);
+                this.startActivity(intent);
+                return true;
         }
         return super.onOptionsItemSelected(item);
     }

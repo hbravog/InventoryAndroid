@@ -10,18 +10,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
-
 import org.json.JSONArray;
 import org.json.JSONException;
-
+import Generics.ApplicationSharedPreference;
 import Generics.Globals;
 import services.AppController;
-import services.User;
-
 
 public class MainActivity extends AppCompatActivity {
 
@@ -29,12 +25,12 @@ public class MainActivity extends AppCompatActivity {
 
     private EditText txtRut;
     private EditText txtPass;
-    Globals globals = new Globals();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ApplicationSharedPreference.writeSharedPreference(this,"pref","http://192.168.1.82:8080/");
         addListenerOnButton();
     }
 
@@ -61,17 +57,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void ValidaUser()
     {
-        User user = new User();
         txtRut = (EditText) findViewById(R.id.txtRut);
         txtPass = (EditText) findViewById(R.id.txtPass);
 
+         String a = ApplicationSharedPreference.readSharedPreference(this,"pref","test");
+        //String url = preference.GetServer() + "InventoryRest/rs/service/getValidaUsuario?p1="+txtRut.getText().toString().trim()+"&p2="+txtPass.getText().toString().trim()+"";
 
-        //final ProgressDialog pDialog = new ProgressDialog(this);
-        //pDialog.setMessage("Cargando...");
-        //pDialog.show();
-        String url = globals.getIp() + "InventoryRest/rs/service/getValidaUsuario?p1="+txtRut.getText().toString().trim()+"&p2="+txtPass.getText().toString().trim()+"";
-       //String url = globals.getIp() + "InventoryRest/rs/service/getAllProduct";
-
+        String url = "";
         JsonArrayRequest jreq = new JsonArrayRequest(url,
                 new Response.Listener<JSONArray>() {
                     @Override
@@ -83,8 +75,6 @@ public class MainActivity extends AppCompatActivity {
 
                         try {
                         String a = response.getString(0);
-
-                           // String name = jo.getString("name");
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -111,6 +101,9 @@ public class MainActivity extends AppCompatActivity {
         });
         AppController.getInstance().addToRequestQueue(jreq, "jreq");
     }
+
+
+
     //------Listener-----------------------------------//
     public void addListenerOnButton() {
 

@@ -1,6 +1,8 @@
 package Generics;
 
 import android.app.Application;
+import android.content.Context;
+import android.content.SharedPreferences;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +20,7 @@ public class Globals extends Application {
     private String apellidos;
     private String ip_server = "http://192.168.43.103:8080/";
     private  String result;
+
 
     // Restrict the constructor from being instantiated
     public Globals()
@@ -70,4 +73,7 @@ public class Globals extends Application {
         }
         return list;
     }
+
+
+
 }
